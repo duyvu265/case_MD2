@@ -16,7 +16,7 @@ function showall() {
     5:hien thi bai hat co trong album
     0:Thoat chuong trinh
     `);
-        choise = input.question(`nhap lua chon : `);
+        choise = +input.question(`nhap lua chon : `);
         switch (choise) {
             case 1:
                 showAllAlbum();

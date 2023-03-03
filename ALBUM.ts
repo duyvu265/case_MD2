@@ -13,7 +13,7 @@ export class ALBUM {
         return this._name;
     }
 
-    set name(value: string) {
+    set_name(value: string) {
         this._name = value;
     }
 
@@ -64,8 +64,12 @@ export class AlbumManager {
         })
     }
 
-    reName(name: string) {
-
+    editNameAlbum(name: string, name1: string): void {
+        this.album.forEach((value, index, array) => {
+            if (name === value.name) {
+                this.album[index].set_name(name1);
+            }
+        })
 
     }
 
@@ -84,4 +88,6 @@ albummanager.deleteAlbum(1);
 albummanager.findByID(1);
 console.log(albummanager)
 albummanager.showSong(1);
+albummanager.editNameAlbum("album1","phong");
+console.log(albummanager);
 

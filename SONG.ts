@@ -20,7 +20,7 @@ export class SONG {
         return this._songOfName;
     }
 
-    set songOfName(value: string) {
+    set_songOfName(value: string) {
         this._songOfName = value;
     }
 }
@@ -55,17 +55,24 @@ class SongManager {
             if (ID === value.ID) {
                 console.log(index);
             }
-            return -1
+            return -1;
         })
     }
 
     deleteSong(ID: number): void {
-        let deleteIndext=this.finByID(ID);
-        if (deleteIndext==-1){
+        let deleteIndext = this.finByID(ID);
+        if (deleteIndext == -1) {
             console.log("khong thay doi tuong");
-        }else {
-             this.arr.splice(deleteIndext,1);
+        } else {
+            this.arr.splice(deleteIndext, 1);
         }
+    }
+    editName(name: string, name1: string): void {
+        this.arr.forEach((value, index, array) => {
+            if (name === value.songOfName) {
+                this.arr[index].set_songOfName(name1);
+            }
+        })
     }
 }
 
@@ -80,6 +87,9 @@ arr.addSong(song3);
 arr.addSong(song4);
 arr.deleteSong(5);
 console.table(arr);
+arr.editName("i do", "phong");
+console.table(arr);
+arr.findByName("hi")
 
 
 
