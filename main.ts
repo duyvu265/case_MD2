@@ -1,59 +1,39 @@
-import {SONG} from "./SONG";
-import {ALBUM} from "./ALBUM";
-import {AlbumManager} from "./ALBUM";
-
-export
 let input = require('readline-sync');
-function showall() {
-    let choise = -1;
+
+function Main() {
+    let choise = -1
     do {
         console.log(`
-    --------MENU-------
-    1:Hien thi Album da co
-    2:Them 1 Album
-    3:Doi ten Album
-    4:Xoa album
-    5:hien thi bai hat co trong album
-    0:Thoat chuong trinh
-    `);
-        choise = +input.question(`nhap lua chon : `);
+                -------MENU-------
+        1.Ban co tai khoan? ===> Dang nhap
+        2.Ban chua co tai khoan===>Dang ky
+        0.Thoat chuonng trinh`);
+        choise = +input.question(`Nhap lua chon :`);
         switch (choise) {
             case 1:
-                showAllAlbum();
+                Login();
                 break;
             case 2:
-                addAlbum1();
+                Sigin();
                 break;
-            case 3:
-                // editAlbum();
-                break;
-            case 4:
-                // deleteAlbum();
-                break;
-            case 5:
-                // showAAlbum();
-                break;
+
         }
+
     } while (choise != 0)
+}function Login() {
+   let account=input.question(`nhap tai khoan :`);
+   let pass=input.question(`nhap mat khau :`);
+
+}
+
+
+function Sigin() {
+    let account=input.question(`Nhap tai khoan :`);
+    let pass=input.question(`Nhap mat khau :`);
+    let phoneNumber=+input.question(`Nhap so dien thoai :`);
+
 }
 
 
 
-function showAllAlbum() {
-    console.table("hello");
-}
-function addAlbum1() {
-    console.table("hi");
-}
-// function editAlbum() {
-//    this.AlbumManager.reName();
-//
-// }
-// function deleteAlbum() {
-//     this.AlbumManager.deleteAlbum();
-// }
-//
-// function showAAlbum() {
-//     this.AlbumManager.showSong();
-// }
-showall()
+Main();
